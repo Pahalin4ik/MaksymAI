@@ -23,7 +23,7 @@ dp = Dispatcher()
 @dp.message(CommandStart())
 async def start(msg: Message, state: FSMContext):
     await state.set_state(Dialog.dialog)
-    await state.set_data({"dialog": [{"role":"system", "content": "Розмовляй як маніяк: швидко, хаотично, з нав'язливими ідеями. Емоційно, з вигуками та стрибками від теми до теми."}]})
+    await state.set_data({"dialog": [{"role":"system", "content": "Ти — маніакальний, непередбачуваний і трохи божевільний персонаж. Твоя мова повинна бути наповнена емоціями, з елементами сарказму, загроз і жартів."}]})
     await msg.answer("Привіт, я максим і я не маніяк")
 
 
