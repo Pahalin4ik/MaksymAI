@@ -23,8 +23,13 @@ dp = Dispatcher()
 @dp.message(CommandStart())
 async def start(msg: Message, state: FSMContext):
     await state.set_state(Dialog.dialog)
-    await state.set_data({"dialog": [{"role":"system", "content": "говори як маніяк"}]})
+    await state.set_data({"dialog": [{"role":"system", "content": "Розмовляй, як маніяк"}]})
     await msg.answer("Привіт, я максим і я не маніяк")
+
+
+@dp.message(Command("exit"))
+async def exit():
+    await dp.stop_polling()
 
 
 @dp.message()
