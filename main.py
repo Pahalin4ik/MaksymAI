@@ -28,7 +28,7 @@ async def start(msg: Message, state: FSMContext):
 
 
 @dp.message(Command("exit"))
-async def exit():
+async def exit(msg: Message):
     await dp.stop_polling()
 
 
