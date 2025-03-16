@@ -23,7 +23,7 @@ dp = Dispatcher()
 @dp.message(CommandStart())
 async def start(msg: Message, state: FSMContext):
     await state.set_state(Dialog.dialog)
-    await state.set_data({"dialog": []})
+    await state.set_data({"dialog": [{"role":"system", "content": "говори як маніяк"}]})
     await msg.answer("Привіт, я максим і я не маніяк")
 
 
