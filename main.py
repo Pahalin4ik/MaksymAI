@@ -55,4 +55,5 @@ async def main() -> None:
 
 if __name__ == "__main__":
     logging.basicConfig(level=logging.INFO)
+    th.start()
     asyncio.run(main())
