@@ -37,7 +37,7 @@ async def messages(msg: Message, state: FSMContext):
     dialog: list[dict[str, str]] = (await state.get_data())['dialog']
     dialog.append({"role": "user", "content": msg.text})
     completion = await client.chat.completions.create(
-        model="deepseek/deepseek-r1:free",
+        model="deepseek/deepseek-chat:free",
         messages=dialog,
         stream=False
     )
