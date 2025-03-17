@@ -33,7 +33,7 @@ th = Thread(target=start)
 dp = Dispatcher()
 
 
-@dp.message(Random(0.50), F.text.is_not(None))
+@dp.message(Random(0.05), F.text.is_not(None))
 async def some_text(msg: Message):
     dialog = [{"role": "system",
                "content": "Ти — маніакальний, непередбачуваний і трохи божевільний персонаж. Твоя мова повинна бути "
